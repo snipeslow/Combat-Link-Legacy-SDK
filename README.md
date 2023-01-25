@@ -6,25 +6,26 @@ I (Snipeslow) started this project a long time ago when I noticed a shader based
 
 # Can you make *X* hud from *X* game?
 I do not take requests. BUT I am willing to teach, either through video tutorials or direct teaching if I spot ya in a voice channel. Planned HUDs I will have outright are:
--Star Wars Clone Commando
--Halo Reach MJOLNIR Mark V
--My Example HUD
--Half Life 2 HEV
+- Star Wars Clone Commando
+- Halo Reach MJOLNIR Mark V
+- My Example HUD
+- Half Life 2 HEV
 
 # Can you make a Dead Space style health bar?
 No, due to how Combat Link sends data. There might be a way to do it later, but I will have to research it.
-Features
--Health Bar
--Auxiliary Health Bar (Or Shield in some contexts, like Halo. Or Armor, like in Half Life 2)
--Minimap Support
--Oxygen Bar
--Temperature Bar
--Status Effect Icons
+
+# Features
+- Health Bar
+- Auxiliary Health Bar (Or Shield in some contexts, like Halo. Or Armor, like in Half Life 2)
+- Minimap Support
+- Oxygen Bar
+- Temperature Bar
+- Status Effect Icons
 
 # Credits
--Snipeslow, the main coder
--error.mdl, their original hud served as an inspiration
--GoFluffYaself, Avatar PVP creator
+- Snipeslow, the main coder
+- error.mdl, their original hud served as an inspiration
+- GoFluffYaself, Avatar PVP creator
 
 # Disclaimer
 Combat Link is not affiliated with AudioLink team. The name just sounds cool and tactical. Combat Link works only in worlds that implement the system and will not work in worlds that haven't implemented the system.
