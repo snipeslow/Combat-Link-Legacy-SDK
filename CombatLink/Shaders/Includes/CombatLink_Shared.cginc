@@ -146,7 +146,7 @@ fixed4 CombatLink_GetMinimap(float2 uv, float dotOnly)
            return tex2D(_Udon_CombatLink_Minimap, uv);
         }
     }
-    return fixed4(0,0,0,0);
+    return fixed4(0,0,0,1);
 }
 
 // Expressed in meters. If not available, return -1 so that the shader knows it doesn't exist.

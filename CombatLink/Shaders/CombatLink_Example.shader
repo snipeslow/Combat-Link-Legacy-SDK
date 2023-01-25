@@ -1,9 +1,10 @@
-﻿Shader "CombatLink/CombatLink_Example"
+Shader "CombatLink/CombatLink_Example"
 {
     Properties
     {
         _MainTex ("Main Texture", 2D) = "white" {}
 		_MainTex2("Secondary Texture", 2D) = "black" {}
+		_StatusTex("Status Texture", 2D) = "black" {}
 		_MiniMapDefault("Texture", 2D) = "black" {}
 		_Scale("Scale", Float) = 1.0
 		_VerticalAdjust("Vertical Adjust", Float) = 0.0
@@ -34,14 +35,14 @@
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
-                float2 uv2 : TEXCOORD0;
+                float2 uv2 : TEXCOORD1;
 				float4 color : COLOR;
             };
 
             struct v2f
             {
                 float2 uv : TEXCOORD0;
-                float2 uv2 : TEXCOORD0;
+                float2 uv2 : TEXCOORD1;
                 float4 vertex : SV_POSITION;
 				float4 color : COLOR;
             };
@@ -52,6 +53,9 @@
 			float4 _MainTex2_ST;
 			sampler2D _MiniMapDefault;
 			float4 _MiniMapDefault_ST;
+			sampler2D _StatusTex;
+			float4 _StatusTex_ST;
+			
 			float _Scale;	
 			float _ScaleVR;	
 			float _VerticalAdjust;	
@@ -79,37 +83,47 @@
 				float3 colorResult = lerp(iCol.xyz, damageColor.xyz, damageColor.w < (1-value));
 				return float4(colorResult,iCol.w);
 			}
-
+			
+			bool IsVetexColorID(v2f i, int id)
+			{
+				return distance(i.color, fixed4(id*0.1%1,floor(id*0.1)*0.1,0,1)) < 0.05;
+			}
+			fixed4 StatusIcon(v2f i, fixed4 col, int id){
+				fixed2 uvCoord = i.uv*0.25;
+				uvCoord.x = uvCoord.x + ((id % 4)*0.25);
+				uvCoord.y = uvCoord.y + 0.75 - (floor(id / 4.0) * 0.25);
+				return fixed4(col.xyz * tex2D(_StatusTex, uvCoord).xyz, col.w);
+			}
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
 				float4 damageColor = tex2D(_MainTex2, i.uv);
 				float4 minimap = tex2D(_MiniMapDefault, i.uv);
-				float4 HAOT = CombatLink_GetMainData();
 				if(CombatLink_IsActive())
 				{
-					if(distance(i.color, fixed4(1,0,0,1)) < 0.05)
+					float4 HAOT = CombatLink_GetMainData();
+					if(IsVetexColorID(i, 1))
 					{
 						col = BlendByAlpha(i, col, damageColor, HAOT.x);
 					}
 
-					if(distance(i.color, fixed4(0.9,0,0,1)) < 0.05)
+					if(IsVetexColorID(i, 2))
 					{
-						col = BlendByAlpha(i, col, damageColor, 0.5);
+						col = BlendByAlpha(i, col, damageColor, HAOT.y);
 					}
 					
-					if(distance(i.color, fixed4(0.8,0,0,1)) < 0.05)
+					if(IsVetexColorID(i, 3))
 					{
 						col = BlendByAlpha(i, col, damageColor, HAOT.z);
 					}
 					// Temperature is defined as a raw value in Kelvin rather than a percentage, so make sure to calculate that properly!
-					if(distance(i.color, fixed4(0.7,0,0,1)) < 0.05)
+					if(IsVetexColorID(i, 4))
 					{
 						col = BlendByAlpha(i, col, damageColor, HAOT.w/(COMBATLINK_SAFETEMPERATURE*2));
 					}
 					
-					if(distance(i.color, fixed4(0.6,0,0,1)) < 0.05)
+					if(IsVetexColorID(i, 5))
 					{
 						col = minimap;
 						if(CombatLink_HasMinimap())
@@ -121,275 +135,215 @@
 							col.w = 0;
 						}
 					}
-					int currentStatusSlot = 0;
+					
+					float4 BBPF = CombatLink_GetDamageStatusData();
 
+					if(IsVetexColorID(i, 6))
+					{
+						if(BBPF.x > 0)
+						{
+							col =  StatusIcon(i, col, 0);
+						}else if(BBPF.y > 0)
+						{
+							col =  StatusIcon(i, col, 1);
+						}else if(BBPF.z > 0)
+						{
+							col =  StatusIcon(i, col, 2);
+						}else if(BBPF.w > 0)
+						{
+							col =  StatusIcon(i, col, 3);
+						}else{
+							col.w = 0;
+						}
+					}
 
-					if(distance(i.color, fixed4(0.5,0,0,1)) < 0.05)
+					if(IsVetexColorID(i, 7))
 					{
-						currentStatusSlot = currentStatusSlot + 1;
+						if(BBPF.x > 0)
+						{
+							if(BBPF.y > 0)
+							{
+								col =  StatusIcon(i, col, 1);
+							}else if(BBPF.z > 0)
+							{
+								col =  StatusIcon(i, col, 2);
+							}else if(BBPF.w > 0)
+							{
+								col =  StatusIcon(i, col, 3);
+							}else
+							{
+								col.w = 0;
+							}
+						}else{
+							col.w = 0;
+						}
 					}
-					switch(currentStatusSlot)
+
+					if(IsVetexColorID(i, 8))
 					{
-						case 0:
-							if(distance(i.color, fixed4(0.5,0,0,1)) < 0.05)
+						if(BBPF.x > 0)
+						{
+							if(BBPF.y > 0)
+							{ 
+								if(BBPF.z > 0)
+								{
+									col =  StatusIcon(i, col, 2);
+								}else if(BBPF.w > 0)
+								{
+									col =  StatusIcon(i, col, 3);
+								}else
+								{
+									col.w = 0;
+								}
+							}else
 							{
-								currentStatusSlot = currentStatusSlot + 1;
+								col.w = 0;
 							}
-						break;
-						case 1:
-							if(distance(i.color, fixed4(0.4,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						default:
-						break;
-					}
-					switch(currentStatusSlot)
-					{
-						case 0:
-							if(distance(i.color, fixed4(0.5,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 1:
-							if(distance(i.color, fixed4(0.4,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 2:
-							if(distance(i.color, fixed4(0.3,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						default:
-						break;
-					}
-					switch(currentStatusSlot)
-					{
-						case 0:
-							if(distance(i.color, fixed4(0.5,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 1:
-							if(distance(i.color, fixed4(0.4,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 2:
-							if(distance(i.color, fixed4(0.3,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 3:
-							if(distance(i.color, fixed4(0.2,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						default:
-						break;
-					}
-					switch(currentStatusSlot)
-					{
-						case 0:
-							if(distance(i.color, fixed4(0.5,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 1:
-							if(distance(i.color, fixed4(0.4,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 2:
-							if(distance(i.color, fixed4(0.3,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 3:
-							if(distance(i.color, fixed4(0.2,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 4:
-							if(distance(i.color, fixed4(0.1,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						default:
-						break;
-					}
-					switch(currentStatusSlot)
-					{
-						case 0:
-							if(distance(i.color, fixed4(0.5,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 1:
-							if(distance(i.color, fixed4(0.4,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 2:
-							if(distance(i.color, fixed4(0.3,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 3:
-							if(distance(i.color, fixed4(0.2,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 4:
-							if(distance(i.color, fixed4(0.1,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 5:
-							if(distance(i.color, fixed4(0,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						default:
-						break;
-					}
-					switch(currentStatusSlot)
-					{
-						case 0:
-							if(distance(i.color, fixed4(0.5,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 1:
-							if(distance(i.color, fixed4(0.4,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 2:
-							if(distance(i.color, fixed4(0.3,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 3:
-							if(distance(i.color, fixed4(0.2,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 4:
-							if(distance(i.color, fixed4(0.1,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 5:
-							if(distance(i.color, fixed4(0,0,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 6:
-							if(distance(i.color, fixed4(0,0.1,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						default:
-						break;
+						}else{
+							col.w = 0;
+						}
 					}
 					
-					switch(currentStatusSlot)
+					if(IsVetexColorID(i, 9))
 					{
-						case 0:
-							if(distance(i.color, fixed4(0.5,0,0,1)) < 0.05)
+						if(BBPF.x > 0)
+						{
+							if(BBPF.y > 0)
+							{ 
+								if(BBPF.z > 0)
+								{ 
+									if(BBPF.w > 0)
+									{
+										col =  StatusIcon(i, col, 3);
+									}else
+									{
+										col.w = 0;
+									}
+								}else
+								{
+									col.w = 0;
+								}
+							}else
 							{
-								currentStatusSlot = currentStatusSlot + 1;
+								col.w = 0;
 							}
-						break;
-						case 1:
-							if(distance(i.color, fixed4(0.4,0,0,1)) < 0.05)
+						}else{
+							col.w = 0;
+						}
+					}
+
+					float4 BSSH = CombatLink_GetStatusData();
+
+					if(IsVetexColorID(i, 10))
+					{
+						if(BSSH.x > 0)
+						{
+							col =  StatusIcon(i, col, 4);
+						}else if(BSSH.y > 0)
+						{
+							col =  StatusIcon(i, col, 5);
+						}else if(BSSH.z > 0)
+						{
+							col =  StatusIcon(i, col, 6);
+						}else if(BSSH.w > 0)
+						{
+							col =  StatusIcon(i, col, 7);
+						}else{
+							col.w = 0;
+						}
+					}
+
+					if(IsVetexColorID(i, 11))
+					{
+						if(BSSH.x > 0)
+						{
+							if(BSSH.y > 0)
 							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 2:
-							if(distance(i.color, fixed4(0.3,0,0,1)) < 0.05)
+								col =  StatusIcon(i, col, 5);
+							}else if(BSSH.z > 0)
 							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 3:
-							if(distance(i.color, fixed4(0.2,0,0,1)) < 0.05)
+								col =  StatusIcon(i, col, 6);
+							}else if(BSSH.w > 0)
 							{
-								currentStatusSlot = currentStatusSlot + 1;
+								col =  StatusIcon(i, col, 7);
+							}else{
+								col.w = 0;
 							}
-						break;
-						case 4:
-							if(distance(i.color, fixed4(0.1,0,0,1)) < 0.05)
+						}else{
+							col.w = 0;
+						}
+					}
+
+					if(IsVetexColorID(i, 12))
+					{
+						if(BSSH.x > 0)
+						{
+							if(BSSH.y > 0)
 							{
-								currentStatusSlot = currentStatusSlot + 1;
+								if(BSSH.z > 0)
+								{
+									col =  StatusIcon(i, col, 6);
+								}else if(BSSH.w > 0)
+								{
+									col =  StatusIcon(i, col, 7);
+								}else{
+									col.w = 0;
+								}
+							}else{
+								col.w = 0;
 							}
-						break;
-						case 5:
-							if(distance(i.color, fixed4(0,0,0,1)) < 0.05)
+						}else{
+							col.w = 0;
+						}
+					}
+					
+					if(IsVetexColorID(i, 13))
+					{
+						if(BSSH.x > 0)
+						{
+							if(BSSH.y > 0)
 							{
-								currentStatusSlot = currentStatusSlot + 1;
+								if(BSSH.z > 0)
+								{
+									if(BSSH.w > 0)
+									{
+										col =  StatusIcon(i, col, 7);
+									}else{
+										col.w = 0;
+									}
+								}else{
+									col.w = 0;
+								}
+							}else{
+								col.w = 0;
 							}
-						break;
-						case 6:
-							if(distance(i.color, fixed4(1,0.1,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						case 7:
-							if(distance(i.color, fixed4(0.9,0.1,0,1)) < 0.05)
-							{
-								currentStatusSlot = currentStatusSlot + 1;
-							}
-						break;
-						default:
-						break;
+						}else{
+							col.w = 0;
+						}
 					}
 				}
 				else{
-					if(distance(i.color, fixed4(0.9,0,0,1)) < 0.05)
+					if(IsVetexColorID(i, 2))
 					{
 						col = BlendByAlpha(i, col, damageColor, 0);
 					}
 					
-					if(distance(i.color, fixed4(0.7,0,0,1)) < 0.05)
+					if(IsVetexColorID(i, 4))
 					{
 						col = BlendByAlpha(i, col, damageColor, 0.5);
 					}
 
-					if(distance(i.color, fixed4(0.6,0,0,1)) < 0.05)
+					if(IsVetexColorID(i, 5))
 					{
 						col = minimap;
 						col.w = 0;
+					}
+					for(int iCount = 6; iCount <= 14; iCount++)
+					{
+						if(IsVetexColorID(i, iCount))
+						{
+								col.w = 0;
+						}
 					}
 				}
 
