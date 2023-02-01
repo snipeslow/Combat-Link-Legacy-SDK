@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: CombatLinkNightVision
+    second: {fileID: 2100000, guid: 3ae013d589d767b4ea07d4588d4a4724, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: CombatLink_Example
     second: {fileID: 2100000, guid: 3b819beb2e371864aae29ea42794d580, type: 2}
   materials:

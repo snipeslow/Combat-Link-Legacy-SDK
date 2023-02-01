@@ -53,12 +53,44 @@ public class TestCombatLink : MonoBehaviour
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Poison"), 0);
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Frost"), 0);
 
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Boost"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Slow"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Stun"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Healing"), 0);
+
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_HasMinimap"), 0);
         Shader.SetGlobalTexture(Shader.PropertyToID("_Udon_CombatLink_Minimap"), Texture2D.blackTexture);
         Shader.SetGlobalTexture(Shader.PropertyToID("_Udon_CombatLink_MinimapDotOnly"), Texture2D.blackTexture);
 
     }
+    [ContextMenu("SetFlatlineValues")]
+    public void SetFlatlineValues()
+    {
 
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_SendHelp"), Random.value);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Health"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_MaxHealth"), 100);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_AuxHealth"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_MaxAuxHealth"), 100);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Oxygen"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_MaxOxygen"), 100);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Temperature"), 0);
+
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Bleed"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Burn"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Poison"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Frost"), 0);
+
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Boost"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Slow"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Stun"), 0);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Healing"), 0);
+
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_HasMinimap"), 0);
+        Shader.SetGlobalTexture(Shader.PropertyToID("_Udon_CombatLink_Minimap"), Texture2D.blackTexture);
+        Shader.SetGlobalTexture(Shader.PropertyToID("_Udon_CombatLink_MinimapDotOnly"), Texture2D.blackTexture);
+
+    }
     [ContextMenu("SetDEBUGValues")]
     public void SetDEBUGValues()
     {
@@ -68,7 +100,7 @@ public class TestCombatLink : MonoBehaviour
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Health"), 75);
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_AuxHealth"), 25);
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Oxygen"), 50);
-        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Temperature"), 293);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Temperature"), 293/2);
 
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Bleed"), 1);
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Burn"), 1);
@@ -76,6 +108,10 @@ public class TestCombatLink : MonoBehaviour
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Frost"), 1);
 
 
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Boost"), 1);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Slow"), 1);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Stun"), 1);
+        Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_Healing"), 1);
 
         Shader.SetGlobalFloat(Shader.PropertyToID("_Udon_CombatLink_HasMinimap"), 1);
         Shader.SetGlobalTexture(Shader.PropertyToID("_Udon_CombatLink_Minimap"), MiniMapTexture);

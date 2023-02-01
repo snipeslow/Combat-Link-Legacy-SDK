@@ -1,10 +1,9 @@
-﻿
+﻿// Disable if UDONSharp is not available to prevent errors from being thrown up!
+#if UDONSHARP
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
 
-// Disable if UDONSharp is not available to prevent errors from being thrown up!
-#if UDONSHARP
 using VRC.Udon;
 public class CombatLinkManager : UdonSharpBehaviour
 {

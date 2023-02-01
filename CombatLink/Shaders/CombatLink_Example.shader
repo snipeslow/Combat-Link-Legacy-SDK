@@ -3,7 +3,8 @@ Shader "CombatLink/CombatLink_Example"
     Properties
     {
         _MainTex ("Main Texture", 2D) = "white" {}
-		_MainTex2("Secondary Texture", 2D) = "black" {}
+		_RampTex("Ramp Texture", 2D) = "black" {}
+		_ThermalTex("Thermal Texture", 2D) = "black" {}
 		_StatusTex("Status Texture", 2D) = "black" {}
 		_MiniMapDefault("Texture", 2D) = "black" {}
 		_Scale("Scale", Float) = 1.0
@@ -11,6 +12,7 @@ Shader "CombatLink/CombatLink_Example"
 		_ScaleVR("ScaleVR VR", Float) = 0.5
 		_VerticalAdjustVR("Vertical Adjust VR", Float) = 0.0
 		_CombatLink_Ammo("Ammo", Float) = 0
+		_NightVisionEnabled("Enable", Range(0,1)) = 0
     }
     SubShader
     {
@@ -30,6 +32,7 @@ Shader "CombatLink/CombatLink_Example"
             #pragma fragment frag
 
             #include "UnityCG.cginc"
+			#include "../../CombatLink/Shaders/Includes/CombatLink_Shared.cginc"
 
             struct appdata
             {
@@ -49,10 +52,16 @@ Shader "CombatLink/CombatLink_Example"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-			sampler2D _MainTex2;
-			float4 _MainTex2_ST;
+
+			sampler2D _RampTex;
+			float4 _RampTex_ST;
+
+			sampler2D _ThermalTex;
+			float4 _ThermalTex_ST;
+
 			sampler2D _MiniMapDefault;
 			float4 _MiniMapDefault_ST;
+
 			sampler2D _StatusTex;
 			float4 _StatusTex_ST;
 			
@@ -61,8 +70,9 @@ Shader "CombatLink/CombatLink_Example"
 			float _VerticalAdjust;	
 			float _VerticalAdjustVR;	
 			float _CombatLink_Ammo;
-			float _DEBUGMODE;
-            #include "../../CombatLink/Shaders/Includes/CombatLink_Shared.cginc"
+			float _DEBUGMODE_VR;
+
+			sampler2D _CombatLinkNightVision;
 				
             v2f vert (appdata v)
             {
@@ -78,12 +88,29 @@ Shader "CombatLink/CombatLink_Example"
                 return o;
             }
 
-			fixed4 BlendByAlpha(v2f i, fixed4 iCol, fixed4 damageColor, float value)
+			fixed4 BlendByAlpha(v2f i, fixed4 iCol, fixed4 damageColor, float value, bool symmetrical)
 			{
 				float3 colorResult = lerp(iCol.xyz, damageColor.xyz, damageColor.w < (1-value));
+				if(symmetrical)
+				{
+					value = (value*0.5)+0.5;
+					colorResult = lerp(iCol.xyz, damageColor.xyz, damageColor.w > (value));
+					colorResult = lerp(colorResult, damageColor.xyz, damageColor.w < (1-value));
+					//colorResult = lerp(colorResult, damageColor.xyz, damageColor.w < (1-value));
+				}
+				colorResult = colorResult * iCol;
 				return float4(colorResult,iCol.w);
 			}
 			
+			fixed4 BlendByAlphaSlider(v2f i, fixed4 iCol, fixed4 damageColor, float value)
+			{
+				value = clamp(value,0.02,1);
+				float3 colorResult = lerp(iCol.xyz, damageColor.xyz, damageColor.w < 0.99-value);
+				colorResult = lerp(colorResult, damageColor.xyz, damageColor.w > 1.01-value);
+				colorResult = colorResult * iCol;
+				return float4(colorResult,iCol.w);
+			}
+
 			bool IsVetexColorID(v2f i, int id)
 			{
 				return distance(i.color, fixed4(id*0.1%1,floor(id*0.1)*0.1,0,1)) < 0.05;
@@ -94,33 +121,36 @@ Shader "CombatLink/CombatLink_Example"
 				uvCoord.y = uvCoord.y + 0.75 - (floor(id / 4.0) * 0.25);
 				return fixed4(col.xyz * tex2D(_StatusTex, uvCoord).xyz, col.w);
 			}
+
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
-				float4 damageColor = tex2D(_MainTex2, i.uv);
+				float4 damageColor = tex2D(_RampTex, i.uv);
+				float4 thermalColor = tex2D(_ThermalTex, i.uv);
 				float4 minimap = tex2D(_MiniMapDefault, i.uv);
 				if(CombatLink_IsActive())
 				{
 					float4 HAOT = CombatLink_GetMainData();
 					if(IsVetexColorID(i, 1))
 					{
-						col = BlendByAlpha(i, col, damageColor, HAOT.x);
+						col = BlendByAlpha(i, col, damageColor, HAOT.x, false);
 					}
 
 					if(IsVetexColorID(i, 2))
 					{
-						col = BlendByAlpha(i, col, damageColor, HAOT.y);
+						col = BlendByAlpha(i, col, damageColor, HAOT.y, true);
 					}
 					
 					if(IsVetexColorID(i, 3))
 					{
-						col = BlendByAlpha(i, col, damageColor, HAOT.z);
+						col = BlendByAlpha(i, col, damageColor, HAOT.z, false);
 					}
 					// Temperature is defined as a raw value in Kelvin rather than a percentage, so make sure to calculate that properly!
 					if(IsVetexColorID(i, 4))
 					{
-						col = BlendByAlpha(i, col, damageColor, HAOT.w/(COMBATLINK_SAFETEMPERATURE*2));
+						col = BlendByAlphaSlider(i, col, thermalColor, (HAOT.w/(COMBATLINK_SAFETEMPERATURE*2)));
+
 					}
 					
 					if(IsVetexColorID(i, 5))
@@ -128,7 +158,7 @@ Shader "CombatLink/CombatLink_Example"
 						col = minimap;
 						if(CombatLink_HasMinimap())
 						{
-							col.xyz = CombatLink_GetMinimap(i.uv, false).xyz;
+							col.xyz = minimap.xyz * CombatLink_GetMinimap(i.uv, false).xyz;
 						}
 						else
 						{
@@ -325,12 +355,12 @@ Shader "CombatLink/CombatLink_Example"
 				else{
 					if(IsVetexColorID(i, 2))
 					{
-						col = BlendByAlpha(i, col, damageColor, 0);
+						col = BlendByAlpha(i, col, damageColor, 0, false);
 					}
 					
 					if(IsVetexColorID(i, 4))
 					{
-						col = BlendByAlpha(i, col, damageColor, 0.5);
+						col = BlendByAlphaSlider(i, col, thermalColor, 0.5);
 					}
 
 					if(IsVetexColorID(i, 5))
