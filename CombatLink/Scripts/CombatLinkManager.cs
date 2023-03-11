@@ -1,5 +1,6 @@
 ﻿// Disable if UDONSharp is not available to prevent errors from being thrown up!
-#if UDONSHARP
+//Emergency patch, apparently as a package, it doesn't register that UDONSharp exists! Works fine when imported as a regular asset!
+//#if UDONSHARP
 using UdonSharp;
 using UnityEngine;
 using VRC.SDKBase;
@@ -487,4 +488,4 @@ public class CombatLinkManager : UdonSharpBehaviour
     }
     float _Ammo2 = 0;
 }
-#endif
+//#endif
