@@ -1,14 +1,19 @@
 ﻿// Disable if UDONSharp is not available to prevent errors from being thrown up!
 
+using UnityEngine;
+
 #if COMBATLINK_UDONSHARP
 
 using UdonSharp;
-using UnityEngine;
 using VRC.SDKBase;
-
 using VRC.Udon;
 
 public class CombatLinkManager : UdonSharpBehaviour
+#else
+using VRCShader = UnityEngine.Shader;
+
+public class CombatLinkManager : MonoBehaviour
+#endif
 {
 
     int activeShaderProperty = -1;
@@ -490,11 +495,3 @@ public class CombatLinkManager : UdonSharpBehaviour
     }
     float _Ammo2 = 0;
 }
-#else
-
-public class CombatLinkManager : MonoBehaviour
-{
-    
-}
-
-#endif
