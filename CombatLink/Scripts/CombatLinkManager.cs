@@ -16,6 +16,7 @@ public class CombatLinkManager : MonoBehaviour
 #endif
 {
     public bool ActivateOnLoad = false;
+#if UDONSHARP
     public void Start()
     {
         Active = ActivateOnLoad;
@@ -25,6 +26,7 @@ public class CombatLinkManager : MonoBehaviour
     {
         Active = !Active;
     }
+#endif
 
     int activeShaderProperty = -1;
     public bool Active
