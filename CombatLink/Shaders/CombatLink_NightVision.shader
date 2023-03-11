@@ -59,12 +59,14 @@
             {
 				fixed4 col = tex2Dproj(_CombatLinkNightVision, i.uv2);
 				fixed4 colRes = col;
+                colRes.w = 0;
 				if (_NightVisionEnabled > 0.01)
 				{
 
 					fixed pi2 = 3.141 * 2;
 					// sample the texture
 					colRes = col;
+                    colRes.w = 1;
 
 					fixed2 Radius = 0.25 / _ScreenParams.xy;
 

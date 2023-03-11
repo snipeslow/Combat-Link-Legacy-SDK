@@ -14,45 +14,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedUdonProgramAsset: {fileID: 11400000, guid: 13f0c0c2cb1c28a4fbc0f4ae2397428b,
     type: 2}
-  udonAssembly: ".data_start\n    __refl_typeid: %SystemInt64, null\n    __refl_typename:
-    %SystemString, null\n    __intnl_returnJump_SystemUInt32_0: %SystemUInt32, null\n   
-    activeShaderProperty: %SystemInt32, null\n    _Active: %SystemBoolean, null\n   
-    aPVPShaderProperty: %SystemInt32, null\n    _APVP: %SystemBoolean, null\n   
-    healthShaderProperty: %SystemInt32, null\n    _Health: %SystemSingle, null\n   
-    maxHealthShaderProperty: %SystemInt32, null\n    _MaxHealth: %SystemSingle, null\n   
-    auxHealthShaderProperty: %SystemInt32, null\n    _AuxHealth: %SystemSingle, null\n   
-    maxAuxHealthShaderProperty: %SystemInt32, null\n    _MaxAuxHealth: %SystemSingle,
-    null\n    oxygenShaderProperty: %SystemInt32, null\n    _Oxygen: %SystemSingle,
-    null\n    maxOxygenShaderProperty: %SystemInt32, null\n    _MaxOxygen: %SystemSingle,
-    null\n    temperatureShaderProperty: %SystemInt32, null\n    _Temperature: %SystemSingle,
-    null\n    bleedShaderProperty: %SystemInt32, null\n    _Bleed: %SystemSingle,
-    null\n    burnShaderProperty: %SystemInt32, null\n    _Burn: %SystemSingle, null\n   
-    poisonShaderProperty: %SystemInt32, null\n    _Poison: %SystemSingle, null\n   
-    frostShaderProperty: %SystemInt32, null\n    _Frost: %SystemSingle, null\n   
-    boostShaderProperty: %SystemInt32, null\n    _Boost: %SystemSingle, null\n   
-    slowShaderProperty: %SystemInt32, null\n    _Slow: %SystemSingle, null\n    stunShaderProperty:
-    %SystemInt32, null\n    _Stun: %SystemSingle, null\n    healingShaderProperty:
-    %SystemInt32, null\n    _Healing: %SystemSingle, null\n    hasMinimapShaderProperty:
-    %SystemInt32, null\n    _HasMinimap: %SystemBoolean, null\n    minimapScaleShaderProperty:
+  udonAssembly: ".data_start\n    .export ActivateOnLoad\n    __refl_typeid: %SystemInt64,
+    null\n    __refl_typename: %SystemString, null\n    __intnl_returnJump_SystemUInt32_0:
+    %SystemUInt32, null\n    ActivateOnLoad: %SystemBoolean, null\n    activeShaderProperty:
+    %SystemInt32, null\n    _Active: %SystemBoolean, null\n    aPVPShaderProperty:
+    %SystemInt32, null\n    _APVP: %SystemBoolean, null\n    healthShaderProperty:
+    %SystemInt32, null\n    _Health: %SystemSingle, null\n    maxHealthShaderProperty:
+    %SystemInt32, null\n    _MaxHealth: %SystemSingle, null\n    auxHealthShaderProperty:
+    %SystemInt32, null\n    _AuxHealth: %SystemSingle, null\n    maxAuxHealthShaderProperty:
+    %SystemInt32, null\n    _MaxAuxHealth: %SystemSingle, null\n    oxygenShaderProperty:
+    %SystemInt32, null\n    _Oxygen: %SystemSingle, null\n    maxOxygenShaderProperty:
+    %SystemInt32, null\n    _MaxOxygen: %SystemSingle, null\n    temperatureShaderProperty:
+    %SystemInt32, null\n    _Temperature: %SystemSingle, null\n    bleedShaderProperty:
+    %SystemInt32, null\n    _Bleed: %SystemSingle, null\n    burnShaderProperty:
+    %SystemInt32, null\n    _Burn: %SystemSingle, null\n    poisonShaderProperty:
+    %SystemInt32, null\n    _Poison: %SystemSingle, null\n    frostShaderProperty:
+    %SystemInt32, null\n    _Frost: %SystemSingle, null\n    boostShaderProperty:
+    %SystemInt32, null\n    _Boost: %SystemSingle, null\n    slowShaderProperty:
+    %SystemInt32, null\n    _Slow: %SystemSingle, null\n    stunShaderProperty: %SystemInt32,
+    null\n    _Stun: %SystemSingle, null\n    healingShaderProperty: %SystemInt32,
+    null\n    _Healing: %SystemSingle, null\n    hasMinimapShaderProperty: %SystemInt32,
+    null\n    _HasMinimap: %SystemBoolean, null\n    minimapScaleShaderProperty:
     %SystemInt32, null\n    _MinimapScale: %SystemSingle, null\n    minimapShaderProperty:
     %SystemInt32, null\n    _Minimap: %UnityEngineTexture2D, null\n    minimapDotOnlyShaderProperty:
     %SystemInt32, null\n    _MinimapDotOnly: %UnityEngineTexture2D, null\n    worldAmmoOverrideShaderProperty:
     %SystemInt32, null\n    _WorldAmmoOverride: %SystemBoolean, null\n    ammoShaderProperty:
     %SystemInt32, null\n    _Ammo: %SystemSingle, null\n    ammo2ShaderProperty:
-    %SystemInt32, null\n    _Ammo2: %SystemSingle, null\n    __0_value__param: %SystemBoolean,
-    null\n    __const_SystemUInt32_0: %SystemUInt32, null\n    __const_SystemInt32_0:
+    %SystemInt32, null\n    _Ammo2: %SystemSingle, null\n    __const_SystemUInt32_0:
+    %SystemUInt32, null\n    __gintnl_SystemUInt32_0: %SystemUInt32, null\n    __0_value__param:
+    %SystemBoolean, null\n    __gintnl_SystemUInt32_1: %SystemUInt32, null\n    __gintnl_SystemUInt32_2:
+    %SystemUInt32, null\n    __0_get_Active__ret: %SystemBoolean, null\n    __const_SystemInt32_0:
     %SystemInt32, null\n    __const_SystemString_0: %SystemString, null\n    __const_SystemInt32_1:
-    %SystemInt32, null\n    __0_get_Active__ret: %SystemBoolean, null\n    __1_value__param:
-    %SystemBoolean, null\n    __const_SystemString_1: %SystemString, null\n    __0_get_APVP__ret:
-    %SystemBoolean, null\n    __2_value__param: %SystemSingle, null\n    __const_SystemString_2:
-    %SystemString, null\n    __0_get_Health__ret: %SystemSingle, null\n    __3_value__param:
-    %SystemSingle, null\n    __const_SystemString_3: %SystemString, null\n    __0_get_MaxHealth__ret:
-    %SystemSingle, null\n    __4_value__param: %SystemSingle, null\n    __const_SystemString_4:
-    %SystemString, null\n    __0_get_AuxHealth__ret: %SystemSingle, null\n    __5_value__param:
-    %SystemSingle, null\n    __0_get_MaxAuxHealth__ret: %SystemSingle, null\n   
-    __6_value__param: %SystemSingle, null\n    __const_SystemString_5: %SystemString,
-    null\n    __0_get_Oxygen__ret: %SystemSingle, null\n    __7_value__param: %SystemSingle,
-    null\n    __const_SystemString_6: %SystemString, null\n    __0_get_MaxOxygen__ret:
+    %SystemInt32, null\n    __1_value__param: %SystemBoolean, null\n    __const_SystemString_1:
+    %SystemString, null\n    __0_get_APVP__ret: %SystemBoolean, null\n    __2_value__param:
+    %SystemSingle, null\n    __const_SystemString_2: %SystemString, null\n    __0_get_Health__ret:
+    %SystemSingle, null\n    __3_value__param: %SystemSingle, null\n    __const_SystemString_3:
+    %SystemString, null\n    __0_get_MaxHealth__ret: %SystemSingle, null\n    __4_value__param:
+    %SystemSingle, null\n    __const_SystemString_4: %SystemString, null\n    __0_get_AuxHealth__ret:
+    %SystemSingle, null\n    __5_value__param: %SystemSingle, null\n    __0_get_MaxAuxHealth__ret:
+    %SystemSingle, null\n    __6_value__param: %SystemSingle, null\n    __const_SystemString_5:
+    %SystemString, null\n    __0_get_Oxygen__ret: %SystemSingle, null\n    __7_value__param:
+    %SystemSingle, null\n    __const_SystemString_6: %SystemString, null\n    __0_get_MaxOxygen__ret:
     %SystemSingle, null\n    __0_get_DefaultTemperature__ret: %SystemSingle, null\n   
     __const_SystemSingle_0: %SystemSingle, null\n    __8_value__param: %SystemSingle,
     null\n    __9_value__param: %SystemSingle, null\n    __const_SystemSingle_1:
@@ -81,11 +83,11 @@ MonoBehaviour:
     __23_value__param: %SystemSingle, null\n    __const_SystemString_21: %SystemString,
     null\n    __0_get_Ammo__ret: %SystemSingle, null\n    __24_value__param: %SystemSingle,
     null\n    __const_SystemString_22: %SystemString, null\n    __0_get_Ammo2__ret:
-    %SystemSingle, null\n    __intnl_SystemBoolean_0: %SystemBoolean, null\n    __intnl_SystemInt32_0:
-    %SystemInt32, null\n    __intnl_SystemInt32_1: %SystemInt32, null\n    __intnl_SystemSingle_0:
-    %SystemSingle, null\n    __intnl_SystemBoolean_1: %SystemBoolean, null\n    __intnl_SystemInt32_2:
-    %SystemInt32, null\n    __intnl_SystemInt32_3: %SystemInt32, null\n    __intnl_SystemSingle_1:
-    %SystemSingle, null\n    __intnl_SystemBoolean_2: %SystemBoolean, null\n    __intnl_SystemBoolean_3:
+    %SystemSingle, null\n    __intnl_SystemBoolean_0: %SystemBoolean, null\n    __intnl_SystemBoolean_1:
+    %SystemBoolean, null\n    __intnl_SystemInt32_0: %SystemInt32, null\n    __intnl_SystemInt32_1:
+    %SystemInt32, null\n    __intnl_SystemSingle_0: %SystemSingle, null\n    __intnl_SystemBoolean_2:
+    %SystemBoolean, null\n    __intnl_SystemInt32_2: %SystemInt32, null\n    __intnl_SystemInt32_3:
+    %SystemInt32, null\n    __intnl_SystemSingle_1: %SystemSingle, null\n    __intnl_SystemBoolean_3:
     %SystemBoolean, null\n    __intnl_SystemBoolean_4: %SystemBoolean, null\n   
     __intnl_SystemBoolean_5: %SystemBoolean, null\n    __intnl_SystemBoolean_6: %SystemBoolean,
     null\n    __intnl_SystemBoolean_7: %SystemBoolean, null\n    __intnl_SystemBoolean_8:
@@ -95,26 +97,39 @@ MonoBehaviour:
     __intnl_SystemBoolean_13: %SystemBoolean, null\n    __intnl_SystemBoolean_14:
     %SystemBoolean, null\n    __intnl_SystemBoolean_15: %SystemBoolean, null\n   
     __intnl_SystemBoolean_16: %SystemBoolean, null\n    __intnl_SystemBoolean_17:
-    %SystemBoolean, null\n    __intnl_SystemInt32_4: %SystemInt32, null\n    __intnl_SystemInt32_5:
-    %SystemInt32, null\n    __intnl_SystemSingle_2: %SystemSingle, null\n    __intnl_SystemBoolean_18:
-    %SystemBoolean, null\n    __intnl_SystemBoolean_19: %SystemBoolean, null\n   
-    __intnl_UnityEngineTexture_0: %UnityEngineTexture, null\n    __intnl_SystemBoolean_20:
+    %SystemBoolean, null\n    __intnl_SystemBoolean_18: %SystemBoolean, null\n   
+    __intnl_SystemInt32_4: %SystemInt32, null\n    __intnl_SystemInt32_5: %SystemInt32,
+    null\n    __intnl_SystemSingle_2: %SystemSingle, null\n    __intnl_SystemBoolean_19:
+    %SystemBoolean, null\n    __intnl_SystemBoolean_20: %SystemBoolean, null\n   
+    __intnl_UnityEngineTexture_0: %UnityEngineTexture, null\n    __intnl_SystemBoolean_21:
     %SystemBoolean, null\n    __intnl_UnityEngineTexture_1: %UnityEngineTexture,
-    null\n    __intnl_SystemBoolean_21: %SystemBoolean, null\n    __intnl_SystemInt32_6:
+    null\n    __intnl_SystemBoolean_22: %SystemBoolean, null\n    __intnl_SystemInt32_6:
     %SystemInt32, null\n    __intnl_SystemInt32_7: %SystemInt32, null\n    __intnl_SystemSingle_3:
-    %SystemSingle, null\n    __intnl_SystemBoolean_22: %SystemBoolean, null\n   
-    __intnl_SystemBoolean_23: %SystemBoolean, null\n.data_end\n.code_start\n    .export
-    __0_set_Active\n    __0_set_Active:\n        PUSH, __const_SystemUInt32_0\n#
+    %SystemSingle, null\n    __intnl_SystemBoolean_23: %SystemBoolean, null\n   
+    __intnl_SystemBoolean_24: %SystemBoolean, null\n.data_end\n.code_start\n    .export
+    _start\n    _start:\n        PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.Start()\n#
+    \n        PUSH, __gintnl_SystemUInt32_0\n        PUSH, ActivateOnLoad\n       
+    PUSH, __0_value__param\n        COPY\n# Calling CombatLinkManager.Active.set\n       
+    JUMP, 0x000000B0\n        PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n       
+    JUMP_INDIRECT, __intnl_returnJump_SystemUInt32_0\n    .export _interact\n   
+    _interact:\n        PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.Interact()\n#
+    \n        PUSH, __gintnl_SystemUInt32_1\n        PUSH, __gintnl_SystemUInt32_2\n#
+    Calling CombatLinkManager.Active.get\n        JUMP, 0x000001AC\n        PUSH,
+    __0_get_Active__ret\n        PUSH, __intnl_SystemBoolean_0\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_0\n        PUSH, __0_value__param\n        COPY\n#
+    Calling CombatLinkManager.Active.set\n        JUMP, 0x000000B0\n        PUSH,
+    __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT, __intnl_returnJump_SystemUInt32_0\n   
+    .export __0_set_Active\n    __0_set_Active:\n        PUSH, __const_SystemUInt32_0\n#
     \n# CombatLinkManager.Active.set\n# \n        PUSH, __0_value__param\n       
     PUSH, _Active\n        COPY\n        PUSH, activeShaderProperty\n        PUSH,
-    __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_0\n        EXTERN,
+    __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_1\n        EXTERN,
     \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_0\n        JUMP_IF_FALSE, 0x00000064\n        PUSH,
+    PUSH, __intnl_SystemBoolean_1\n        JUMP_IF_FALSE, 0x0000010c\n        PUSH,
     __const_SystemString_0\n        PUSH, activeShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n#
     Cow dirty\n        PUSH, activeShaderProperty\n        PUSH, __intnl_SystemInt32_1\n       
-    COPY\n        PUSH, _Active\n        JUMP_IF_FALSE, 0x000000a4\n        PUSH,
+    COPY\n        PUSH, _Active\n        JUMP_IF_FALSE, 0x0000014c\n        PUSH,
     __const_SystemInt32_1\n        PUSH, __intnl_SystemInt32_0\n        COPY\n       
-    JUMP, 0x000000B8\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemInt32_0\n       
+    JUMP, 0x00000160\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemInt32_0\n       
     COPY\n        PUSH, __intnl_SystemInt32_0\n        PUSH, __intnl_SystemSingle_0\n       
     EXTERN, \"SystemConvert.__ToSingle__SystemInt32__SystemSingle\"\n        PUSH,
     __intnl_SystemInt32_1\n        PUSH, __intnl_SystemSingle_0\n        EXTERN,
@@ -128,13 +143,13 @@ MonoBehaviour:
     __intnl_returnJump_SystemUInt32_0\n    .export __0_set_APVP\n    __0_set_APVP:\n       
     PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.APVP.set\n# \n        PUSH,
     __1_value__param\n        PUSH, _APVP\n        COPY\n        PUSH, aPVPShaderProperty\n       
-    PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_1\n        EXTERN,
+    PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_2\n        EXTERN,
     \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_1\n        JUMP_IF_FALSE, 0x000001a4\n        PUSH,
+    PUSH, __intnl_SystemBoolean_2\n        JUMP_IF_FALSE, 0x0000024c\n        PUSH,
     __const_SystemString_1\n        PUSH, aPVPShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n#
     Cow dirty\n        PUSH, aPVPShaderProperty\n        PUSH, __intnl_SystemInt32_3\n       
-    COPY\n        PUSH, _APVP\n        JUMP_IF_FALSE, 0x000001e4\n        PUSH, __const_SystemInt32_1\n       
-    PUSH, __intnl_SystemInt32_2\n        COPY\n        JUMP, 0x000001F8\n       
+    COPY\n        PUSH, _APVP\n        JUMP_IF_FALSE, 0x0000028c\n        PUSH, __const_SystemInt32_1\n       
+    PUSH, __intnl_SystemInt32_2\n        COPY\n        JUMP, 0x000002A0\n       
     PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemInt32_2\n        COPY\n       
     PUSH, __intnl_SystemInt32_2\n        PUSH, __intnl_SystemSingle_1\n        EXTERN,
     \"SystemConvert.__ToSingle__SystemInt32__SystemSingle\"\n        PUSH, __intnl_SystemInt32_3\n       
@@ -148,9 +163,9 @@ MonoBehaviour:
     .export __0_set_Health\n    __0_set_Health:\n        PUSH, __const_SystemUInt32_0\n#
     \n# CombatLinkManager.Health.set\n# \n        PUSH, __2_value__param\n       
     PUSH, _Health\n        COPY\n        PUSH, healthShaderProperty\n        PUSH,
-    __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_2\n        EXTERN,
+    __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_3\n        EXTERN,
     \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_2\n        JUMP_IF_FALSE, 0x000002e4\n        PUSH,
+    PUSH, __intnl_SystemBoolean_3\n        JUMP_IF_FALSE, 0x0000038c\n        PUSH,
     __const_SystemString_2\n        PUSH, healthShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, healthShaderProperty\n        PUSH, _Health\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,
@@ -162,9 +177,9 @@ MonoBehaviour:
     __intnl_returnJump_SystemUInt32_0\n    .export __0_set_MaxHealth\n    __0_set_MaxHealth:\n       
     PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.MaxHealth.set\n# \n       
     PUSH, __3_value__param\n        PUSH, _MaxHealth\n        COPY\n        PUSH,
-    maxHealthShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_3\n       
+    maxHealthShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_4\n       
     EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_3\n        JUMP_IF_FALSE, 0x000003b8\n        PUSH,
+    PUSH, __intnl_SystemBoolean_4\n        JUMP_IF_FALSE, 0x00000460\n        PUSH,
     __const_SystemString_3\n        PUSH, maxHealthShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n        PUSH,
     maxHealthShaderProperty\n        PUSH, _MaxHealth\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
@@ -178,8 +193,8 @@ MonoBehaviour:
     __0_set_AuxHealth:\n        PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.AuxHealth.set\n#
     \n        PUSH, __4_value__param\n        PUSH, _AuxHealth\n        COPY\n       
     PUSH, auxHealthShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_4\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_4\n        JUMP_IF_FALSE, 0x0000048c\n        PUSH,
+    __intnl_SystemBoolean_5\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_5\n        JUMP_IF_FALSE, 0x00000534\n        PUSH,
     __const_SystemString_4\n        PUSH, auxHealthShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n        PUSH,
     auxHealthShaderProperty\n        PUSH, _AuxHealth\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
@@ -193,8 +208,8 @@ MonoBehaviour:
     __0_set_MaxAuxHealth:\n        PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.MaxAuxHealth.set\n#
     \n        PUSH, __5_value__param\n        PUSH, _MaxAuxHealth\n        COPY\n       
     PUSH, maxAuxHealthShaderProperty\n        PUSH, __const_SystemInt32_0\n       
-    PUSH, __intnl_SystemBoolean_5\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_5\n        JUMP_IF_FALSE, 0x00000560\n        PUSH,
+    PUSH, __intnl_SystemBoolean_6\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_6\n        JUMP_IF_FALSE, 0x00000608\n        PUSH,
     __const_SystemString_4\n        PUSH, maxAuxHealthShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n        PUSH,
     maxAuxHealthShaderProperty\n        PUSH, _MaxAuxHealth\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
@@ -208,8 +223,8 @@ MonoBehaviour:
     __0_set_Oxygen:\n        PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.Oxygen.set\n#
     \n        PUSH, __6_value__param\n        PUSH, _Oxygen\n        COPY\n       
     PUSH, oxygenShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_6\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_6\n        JUMP_IF_FALSE, 0x00000634\n        PUSH,
+    __intnl_SystemBoolean_7\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_7\n        JUMP_IF_FALSE, 0x000006dc\n        PUSH,
     __const_SystemString_5\n        PUSH, oxygenShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, oxygenShaderProperty\n        PUSH, _Oxygen\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,
@@ -221,9 +236,9 @@ MonoBehaviour:
     __intnl_returnJump_SystemUInt32_0\n    .export __0_set_MaxOxygen\n    __0_set_MaxOxygen:\n       
     PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.MaxOxygen.set\n# \n       
     PUSH, __7_value__param\n        PUSH, _MaxOxygen\n        COPY\n        PUSH,
-    maxOxygenShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_7\n       
+    maxOxygenShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_8\n       
     EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_7\n        JUMP_IF_FALSE, 0x00000708\n        PUSH,
+    PUSH, __intnl_SystemBoolean_8\n        JUMP_IF_FALSE, 0x000007b0\n        PUSH,
     __const_SystemString_6\n        PUSH, maxOxygenShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n        PUSH,
     maxOxygenShaderProperty\n        PUSH, _MaxOxygen\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
@@ -246,8 +261,8 @@ MonoBehaviour:
     PUSH, __9_value__param\n        PUSH, __const_SystemSingle_1\n        PUSH, _Temperature\n       
     EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, temperatureShaderProperty\n        PUSH, __const_SystemInt32_0\n       
-    PUSH, __intnl_SystemBoolean_8\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_8\n        JUMP_IF_FALSE, 0x00000848\n        PUSH,
+    PUSH, __intnl_SystemBoolean_9\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_9\n        JUMP_IF_FALSE, 0x000008f0\n        PUSH,
     __const_SystemString_7\n        PUSH, temperatureShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n        PUSH,
     temperatureShaderProperty\n        PUSH, _Temperature\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
@@ -262,8 +277,8 @@ MonoBehaviour:
     \n        PUSH, __10_value__param\n        PUSH, __const_SystemSingle_1\n       
     PUSH, _Bleed\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, bleedShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_9\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_9\n        JUMP_IF_FALSE, 0x00000928\n        PUSH,
+    __intnl_SystemBoolean_10\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_10\n        JUMP_IF_FALSE, 0x000009d0\n        PUSH,
     __const_SystemString_8\n        PUSH, bleedShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, bleedShaderProperty\n        PUSH, _Bleed\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,
@@ -276,8 +291,8 @@ MonoBehaviour:
     \n# CombatLinkManager.Burn.set\n# \n        PUSH, __11_value__param\n       
     PUSH, __const_SystemSingle_1\n        PUSH, _Burn\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, burnShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_10\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_10\n        JUMP_IF_FALSE, 0x00000a08\n        PUSH,
+    __intnl_SystemBoolean_11\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_11\n        JUMP_IF_FALSE, 0x00000ab0\n        PUSH,
     __const_SystemString_9\n        PUSH, burnShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, burnShaderProperty\n        PUSH, _Burn\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,
@@ -290,8 +305,8 @@ MonoBehaviour:
     \n# CombatLinkManager.Poison.set\n# \n        PUSH, __12_value__param\n       
     PUSH, __const_SystemSingle_1\n        PUSH, _Poison\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, poisonShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_11\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_11\n        JUMP_IF_FALSE, 0x00000ae8\n        PUSH,
+    __intnl_SystemBoolean_12\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_12\n        JUMP_IF_FALSE, 0x00000b90\n        PUSH,
     __const_SystemString_10\n        PUSH, poisonShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n        PUSH,
     poisonShaderProperty\n        PUSH, _Poison\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
@@ -306,8 +321,8 @@ MonoBehaviour:
     PUSH, __13_value__param\n        PUSH, __const_SystemSingle_1\n        PUSH,
     _Frost\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, frostShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_12\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_12\n        JUMP_IF_FALSE, 0x00000bc8\n        PUSH,
+    __intnl_SystemBoolean_13\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_13\n        JUMP_IF_FALSE, 0x00000c70\n        PUSH,
     __const_SystemString_11\n        PUSH, frostShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, frostShaderProperty\n        PUSH, _Frost\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,
@@ -320,8 +335,8 @@ MonoBehaviour:
     \n# CombatLinkManager.Boost.set\n# \n        PUSH, __14_value__param\n       
     PUSH, __const_SystemSingle_1\n        PUSH, _Boost\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, boostShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_13\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_13\n        JUMP_IF_FALSE, 0x00000ca8\n        PUSH,
+    __intnl_SystemBoolean_14\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_14\n        JUMP_IF_FALSE, 0x00000d50\n        PUSH,
     __const_SystemString_12\n        PUSH, boostShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, boostShaderProperty\n        PUSH, _Boost\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,
@@ -334,8 +349,8 @@ MonoBehaviour:
     \n# CombatLinkManager.Slow.set\n# \n        PUSH, __15_value__param\n       
     PUSH, __const_SystemSingle_1\n        PUSH, _Slow\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, slowShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_14\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_14\n        JUMP_IF_FALSE, 0x00000d88\n        PUSH,
+    __intnl_SystemBoolean_15\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_15\n        JUMP_IF_FALSE, 0x00000e30\n        PUSH,
     __const_SystemString_13\n        PUSH, slowShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, slowShaderProperty\n        PUSH, _Slow\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,
@@ -348,8 +363,8 @@ MonoBehaviour:
     \n# CombatLinkManager.Stun.set\n# \n        PUSH, __16_value__param\n       
     PUSH, __const_SystemSingle_1\n        PUSH, _Stun\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, stunShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_15\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_15\n        JUMP_IF_FALSE, 0x00000e68\n        PUSH,
+    __intnl_SystemBoolean_16\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_16\n        JUMP_IF_FALSE, 0x00000f10\n        PUSH,
     __const_SystemString_14\n        PUSH, stunShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, stunShaderProperty\n        PUSH, _Stun\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,
@@ -362,8 +377,8 @@ MonoBehaviour:
     \n# CombatLinkManager.Healing.set\n# \n        PUSH, __17_value__param\n       
     PUSH, __const_SystemSingle_1\n        PUSH, _Healing\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, healingShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_16\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_16\n        JUMP_IF_FALSE, 0x00000f48\n        PUSH,
+    __intnl_SystemBoolean_17\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_17\n        JUMP_IF_FALSE, 0x00000ff0\n        PUSH,
     __const_SystemString_15\n        PUSH, healingShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n        PUSH,
     healingShaderProperty\n        PUSH, _Healing\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
@@ -377,14 +392,14 @@ MonoBehaviour:
     PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.HasMinimap.set\n# \n       
     PUSH, __18_value__param\n        PUSH, _HasMinimap\n        COPY\n        PUSH,
     hasMinimapShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_17\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_17\n        JUMP_IF_FALSE, 0x0000101c\n        PUSH,
+    __intnl_SystemBoolean_18\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_18\n        JUMP_IF_FALSE, 0x000010c4\n        PUSH,
     __const_SystemString_16\n        PUSH, hasMinimapShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n# Cow dirty\n       
     PUSH, hasMinimapShaderProperty\n        PUSH, __intnl_SystemInt32_5\n       
-    COPY\n        PUSH, _HasMinimap\n        JUMP_IF_FALSE, 0x0000105c\n        PUSH,
+    COPY\n        PUSH, _HasMinimap\n        JUMP_IF_FALSE, 0x00001104\n        PUSH,
     __const_SystemInt32_1\n        PUSH, __intnl_SystemInt32_4\n        COPY\n       
-    JUMP, 0x00001070\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemInt32_4\n       
+    JUMP, 0x00001118\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemInt32_4\n       
     COPY\n        PUSH, __intnl_SystemInt32_4\n        PUSH, __intnl_SystemSingle_2\n       
     EXTERN, \"SystemConvert.__ToSingle__SystemInt32__SystemSingle\"\n        PUSH,
     __intnl_SystemInt32_5\n        PUSH, __intnl_SystemSingle_2\n        EXTERN,
@@ -400,8 +415,8 @@ MonoBehaviour:
     \n        PUSH, __19_value__param\n        PUSH, __const_SystemSingle_1\n       
     PUSH, _MinimapScale\n        EXTERN, \"UnityEngineMathf.__Max__SystemSingle_SystemSingle__SystemSingle\"\n       
     PUSH, minimapScaleShaderProperty\n        PUSH, __const_SystemInt32_0\n       
-    PUSH, __intnl_SystemBoolean_18\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_18\n        JUMP_IF_FALSE, 0x00001168\n        PUSH,
+    PUSH, __intnl_SystemBoolean_19\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_19\n        JUMP_IF_FALSE, 0x00001210\n        PUSH,
     __const_SystemString_17\n        PUSH, minimapScaleShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n        PUSH,
     minimapScaleShaderProperty\n        PUSH, _MinimapScale\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
@@ -415,8 +430,8 @@ MonoBehaviour:
     __0_set_Minimap:\n        PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.Minimap.set\n#
     \n        PUSH, __20_value__param\n        PUSH, _Minimap\n        COPY\n       
     PUSH, minimapShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_19\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_19\n        JUMP_IF_FALSE, 0x0000123c\n        PUSH,
+    __intnl_SystemBoolean_20\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_20\n        JUMP_IF_FALSE, 0x000012e4\n        PUSH,
     __const_SystemString_18\n        PUSH, minimapShaderProperty\n        EXTERN,
     \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n        PUSH,
     _Minimap\n        PUSH, __intnl_UnityEngineTexture_0\n        COPY\n        PUSH,
@@ -432,8 +447,8 @@ MonoBehaviour:
     PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.MinimapDotOnly.set\n# \n       
     PUSH, __21_value__param\n        PUSH, _MinimapDotOnly\n        COPY\n       
     PUSH, minimapDotOnlyShaderProperty\n        PUSH, __const_SystemInt32_0\n       
-    PUSH, __intnl_SystemBoolean_20\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_20\n        JUMP_IF_FALSE, 0x00001324\n        PUSH,
+    PUSH, __intnl_SystemBoolean_21\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_21\n        JUMP_IF_FALSE, 0x000013cc\n        PUSH,
     __const_SystemString_19\n        PUSH, minimapDotOnlyShaderProperty\n       
     EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, _MinimapDotOnly\n        PUSH, __intnl_UnityEngineTexture_1\n        COPY\n       
@@ -449,14 +464,14 @@ MonoBehaviour:
     __0_set_WorldAmmoOverride:\n        PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.WorldAmmoOverride.set\n#
     \n        PUSH, __22_value__param\n        PUSH, _WorldAmmoOverride\n       
     COPY\n        PUSH, worldAmmoOverrideShaderProperty\n        PUSH, __const_SystemInt32_0\n       
-    PUSH, __intnl_SystemBoolean_21\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_21\n        JUMP_IF_FALSE, 0x0000140c\n        PUSH,
+    PUSH, __intnl_SystemBoolean_22\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_22\n        JUMP_IF_FALSE, 0x000014b4\n        PUSH,
     __const_SystemString_20\n        PUSH, worldAmmoOverrideShaderProperty\n       
     EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n#
     Cow dirty\n        PUSH, worldAmmoOverrideShaderProperty\n        PUSH, __intnl_SystemInt32_7\n       
-    COPY\n        PUSH, _WorldAmmoOverride\n        JUMP_IF_FALSE, 0x0000144c\n       
+    COPY\n        PUSH, _WorldAmmoOverride\n        JUMP_IF_FALSE, 0x000014f4\n       
     PUSH, __const_SystemInt32_1\n        PUSH, __intnl_SystemInt32_6\n        COPY\n       
-    JUMP, 0x00001460\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemInt32_6\n       
+    JUMP, 0x00001508\n        PUSH, __const_SystemInt32_0\n        PUSH, __intnl_SystemInt32_6\n       
     COPY\n        PUSH, __intnl_SystemInt32_6\n        PUSH, __intnl_SystemSingle_3\n       
     EXTERN, \"SystemConvert.__ToSingle__SystemInt32__SystemSingle\"\n        PUSH,
     __intnl_SystemInt32_7\n        PUSH, __intnl_SystemSingle_3\n        EXTERN,
@@ -471,8 +486,8 @@ MonoBehaviour:
     __0_set_Ammo:\n        PUSH, __const_SystemUInt32_0\n# \n# CombatLinkManager.Ammo.set\n#
     \n        PUSH, __23_value__param\n        PUSH, _Ammo\n        COPY\n       
     PUSH, ammoShaderProperty\n        PUSH, __const_SystemInt32_0\n        PUSH,
-    __intnl_SystemBoolean_22\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_22\n        JUMP_IF_FALSE, 0x0000154c\n        PUSH,
+    __intnl_SystemBoolean_23\n        EXTERN, \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
+    PUSH, __intnl_SystemBoolean_23\n        JUMP_IF_FALSE, 0x000015f4\n        PUSH,
     __const_SystemString_21\n        PUSH, ammoShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, ammoShaderProperty\n        PUSH, _Ammo\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,
@@ -484,9 +499,9 @@ MonoBehaviour:
     .export __0_set_Ammo2\n    __0_set_Ammo2:\n        PUSH, __const_SystemUInt32_0\n#
     \n# CombatLinkManager.Ammo2.set\n# \n        PUSH, __24_value__param\n       
     PUSH, _Ammo2\n        COPY\n        PUSH, ammo2ShaderProperty\n        PUSH,
-    __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_23\n        EXTERN,
+    __const_SystemInt32_0\n        PUSH, __intnl_SystemBoolean_24\n        EXTERN,
     \"SystemInt32.__op_LessThan__SystemInt32_SystemInt32__SystemBoolean\"\n       
-    PUSH, __intnl_SystemBoolean_23\n        JUMP_IF_FALSE, 0x00001620\n        PUSH,
+    PUSH, __intnl_SystemBoolean_24\n        JUMP_IF_FALSE, 0x000016c8\n        PUSH,
     __const_SystemString_22\n        PUSH, ammo2ShaderProperty\n        EXTERN, \"VRCSDKBaseVRCShader.__PropertyToID__SystemString__SystemInt32\"\n       
     PUSH, ammo2ShaderProperty\n        PUSH, _Ammo2\n        EXTERN, \"VRCSDKBaseVRCShader.__SetGlobalFloat__SystemInt32_SystemSingle__SystemVoid\"\n       
     PUSH, __intnl_returnJump_SystemUInt32_0\n        COPY\n        JUMP_INDIRECT,

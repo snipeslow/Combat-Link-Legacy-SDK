@@ -2,12 +2,12 @@
 
 using UnityEngine;
 
-#if COMBATLINK_UDONSHARP
+#if UDONSHARP
 
 using UdonSharp;
 using VRC.SDKBase;
 using VRC.Udon;
-
+[UdonBehaviourSyncMode(BehaviourSyncMode.NoVariableSync)]
 public class CombatLinkManager : UdonSharpBehaviour
 #else
 using VRCShader = UnityEngine.Shader;
@@ -15,6 +15,16 @@ using VRCShader = UnityEngine.Shader;
 public class CombatLinkManager : MonoBehaviour
 #endif
 {
+    public bool ActivateOnLoad = false;
+    public void Start()
+    {
+        Active = ActivateOnLoad;
+    }
+
+    public override void Interact()
+    {
+        Active = !Active;
+    }
 
     int activeShaderProperty = -1;
     public bool Active
