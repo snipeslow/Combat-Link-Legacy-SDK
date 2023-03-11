@@ -13,9 +13,7 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [
-        "UDONSHARP"
-    ],
+    "defineConstraints": [],
     "versionDefines": [
         {
             "name": "com.vrchat.udonsharp",
