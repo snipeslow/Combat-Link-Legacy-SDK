@@ -1,7 +1,7 @@
 {
 	"name" : "com.sirmasters.combatlink",
 	"displayName" : "CombatLink",
-	"version" : "0.2.5",
+	"version" : "0.3.0",
 	"unity" : "2018.4",
 	"description" : "A system/standard to provide avatars with working HUD systems with world data."
 }
