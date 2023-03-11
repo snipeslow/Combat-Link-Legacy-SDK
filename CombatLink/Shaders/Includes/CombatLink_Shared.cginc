@@ -68,8 +68,8 @@ W = Temperature
 */
 float4 CombatLink_GetMainDataRaw()
 {
-    float4 resultData = float4(_Udon_CombatLink_Health, _Udon_CombatLink_AuxHealth, _Udon_CombatLink_Oxygen, _Udon_CombatLink_Temperature);
-    return resultData;
+    return float4(_Udon_CombatLink_Health, _Udon_CombatLink_AuxHealth, _Udon_CombatLink_Oxygen, _Udon_CombatLink_Temperature);
+
 }
 
 /*
@@ -80,8 +80,7 @@ W = Temperature
 */
 float4 CombatLink_GetMainData()
 {
-    float4 resultData = float4(_Udon_CombatLink_Health / _Udon_CombatLink_MaxHealth,_Udon_CombatLink_AuxHealth / _Udon_CombatLink_MaxAuxHealth,_Udon_CombatLink_Oxygen / _Udon_CombatLink_MaxOxygen, _Udon_CombatLink_Temperature);
-    return resultData;
+    return float4(_Udon_CombatLink_Health / _Udon_CombatLink_MaxHealth,_Udon_CombatLink_AuxHealth / _Udon_CombatLink_MaxAuxHealth,_Udon_CombatLink_Oxygen / _Udon_CombatLink_MaxOxygen, _Udon_CombatLink_Temperature);
 }
 
 /*
@@ -98,9 +97,7 @@ uniform float _Udon_CombatLink_Frost;
 
 float4 CombatLink_GetDamageStatusData()
 {
-    float4 resultData = float4(_Udon_CombatLink_Bleed, _Udon_CombatLink_Burn, _Udon_CombatLink_Poison, _Udon_CombatLink_Frost);
-    resultData = resultData;
-    return resultData;
+    return float4(_Udon_CombatLink_Bleed, _Udon_CombatLink_Burn, _Udon_CombatLink_Poison, _Udon_CombatLink_Frost);
 }
 
 /*
@@ -117,9 +114,7 @@ uniform float _Udon_CombatLink_Healing;
 
 float4 CombatLink_GetStatusData()
 {
-    float4 resultData = float4(_Udon_CombatLink_Boost, _Udon_CombatLink_Slow, _Udon_CombatLink_Stun, _Udon_CombatLink_Healing);
-    resultData = resultData;
-    return resultData;
+    return float4(_Udon_CombatLink_Boost, _Udon_CombatLink_Slow, _Udon_CombatLink_Stun, _Udon_CombatLink_Healing);
 }
 
 // Tell Shader if we have a minimap or not
