@@ -1,9 +1,19 @@
-﻿// Disable if UDONSharp is not available to prevent errors from being thrown up!
+﻿/**
+ * CombatLink is created by Snipeslow as a standardisation for VRChat to allow worlds to send combat/health related data to avatars.
+ * This code is meant to be used within the confines of VRChat's UDON system, via UDONSHARP.
+ * Use outside of VRChat is discouraged and no support will be provided for non-VRChat use.
+ * CombatLink when used in a world project, requires UDONSharp to function.
+ * If UDONSharp is not present, this prefab will not function for world use.
+ * If used in an Avatar project, this file is not required to function and you may delete the "CombatLink/Scripts/.." folder optionally.
+ * CombatLink is not affiliated with AudioLink.
+ **/
+
 
 using UnityEngine;
 
-#if UDONSHARP
+// Disable if UDONSharp is not available to prevent errors from being thrown up!
 
+#if UDONSHARP
 using UdonSharp;
 using VRC.SDKBase;
 using VRC.Udon;
@@ -15,6 +25,25 @@ using VRCShader = UnityEngine.Shader;
 public class CombatLinkManager : MonoBehaviour
 #endif
 {
+
+    // This is used to detect if we are using a world project in the editor
+#if UDON && UNITY_EDITOR
+    [UnityEditor.InitializeOnLoadMethod]
+    static void CombatLinkSetupCheck()
+    {
+        // We do not have UDONSharp, throw an assert and tell them what to do solve the issue.
+#if !UDONSHARP
+        Debug.LogAssertion("WARNING: CombatLink is detected in your world project, but UDONSharp is not detected.\nWe only support UDONSharp World and Avatar projects!\nPlease uninstall CombatLink to continue!");
+#endif
+        // We do not support Quest/Android, warn the user of the issues.
+#if UNITY_ANDROID
+        Debug.LogWarning("WARNING: CombatLink is not intended to work in Quest/Android platforms. Features will not work as intended!");
+#endif
+#if !UNITY_2019_4_OR_NEWER
+        Debug.LogWarning("WARNING: CombatLink is not intended to work older Unity versions, please upgrade to the correct version! Features will not work as intended!");
+#endif
+    }
+#endif
     public bool ActivateOnLoad = false;
 #if UDONSHARP
     public void Start()
