@@ -33,7 +33,7 @@ public class CombatLinkManager : MonoBehaviour
     {
         // We do not have UDONSharp, throw an assert and tell them what to do solve the issue.
 #if !UDONSHARP
-        Debug.LogAssertion("WARNING: CombatLink is detected in your world project, but UDONSharp is not detected.\nWe only support UDONSharp World and Avatar projects!\nPlease uninstall CombatLink to continue!");
+        Debug.LogAssertion("WARNING: CombatLink is detected in your world project, but UDONSharp is not detected.\nWe mainly support UDONSharp World and Avatar projects, however we do provide a wrapper for UDON Graph and CyanTrigger via CombatLinkGraphWrapper! Please install UDONSharp to continue.");
 #endif
         // We do not support Quest/Android, warn the user of the issues.
 #if UNITY_ANDROID
