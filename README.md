@@ -1,6 +1,10 @@
 **Currently requires using UDONSharp. CyanTriggers and Graph support requires using the wrapper version in place of the UDONSharp version of the prefab!**
+
 # To get started
-Go here: https://github.com/snipeslow/Combat-Link/wiki
+Download the latest release here: https://github.com/snipeslow/Combat-Link/releases
+
+Then go here to learn how to use it: https://github.com/snipeslow/Combat-Link/wiki
+
 # What is Combat Link?
 Combat Link is a system/standard in which allows a world to give your avatar's HUD data, such as your health, status effects, and other information. All in a prefab you can stick on your avatar!
 
