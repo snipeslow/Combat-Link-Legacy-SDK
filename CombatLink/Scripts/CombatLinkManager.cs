@@ -161,7 +161,7 @@ public class CombatLinkManager : MonoBehaviour
             _MaxAuxHealth = value;
             if (maxAuxHealthShaderProperty < 0)
             {
-                maxAuxHealthShaderProperty = VRCShader.PropertyToID("_Udon_CombatLink_AuxHealth");
+                maxAuxHealthShaderProperty = VRCShader.PropertyToID("_Udon_CombatLink_MaxAuxHealth");
             }
             VRCShader.SetGlobalFloat(maxAuxHealthShaderProperty, _MaxAuxHealth);
         }
