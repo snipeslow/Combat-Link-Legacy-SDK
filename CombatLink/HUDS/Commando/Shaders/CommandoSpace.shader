@@ -188,13 +188,55 @@
                     {
                         col.a = 0;
                     }
+
                     if (distance(i.mask, float2(0.02f, 1)) < 0.005f)
                     {
                         col = lerp(col, col * half4(0.75f, 0.75f, 1, 1 + _AlphaAdd), (i.gradient.x < (_CosTime.y * 0.025f) + 0.9f) * mask);
                     }
+
                     if (distance(i.mask, float2(0.03f, 1)) < 0.005f)
                     {
                         col = lerp(col, col * half4(0.5, 1, 0.5, 1 + _AlphaAdd), (i.gradient.x < (_SinTime.w * 0.025f) + 0.1f) * mask);
+                    }
+
+                    if (distance(i.mask, float2(0.0f, 0.99f)) < 0.005f)
+                    {
+                        col.a = 0;
+                    }
+
+                    if (distance(i.mask, float2(0.01f, 0.99f)) < 0.005f)
+                    {
+                        col.a = 0;
+                    }
+
+                    if (distance(i.mask, float2(0.02f, 0.99f)) < 0.005f)
+                    {
+                        col.a = 0;
+                    }
+
+                    if (distance(i.mask, float2(0.03f, 0.99f)) < 0.005f)
+                    {
+                        col.a = 0;
+                    }
+
+                    if (distance(i.mask, float2(0.04f, 0.99f)) < 0.005f)
+                    {
+                        col.a = 0;
+                    }
+
+                    if (distance(i.mask, float2(0.05f, 0.99f)) < 0.005f)
+                    {
+                        col.a = 0;
+                    }
+
+                    if (distance(i.mask, float2(0.06f, 0.99f)) < 0.005f)
+                    {
+                        col.a = 0;
+                    }
+
+                    if (distance(i.mask, float2(0.07f, 0.99f)) < 0.005f)
+                    {
+                        col.a = 0;
                     }
                 }
                 return col;
