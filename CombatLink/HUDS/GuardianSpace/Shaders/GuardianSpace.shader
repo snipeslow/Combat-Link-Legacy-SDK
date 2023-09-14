@@ -7,9 +7,9 @@
         _MaskTex("Mask", 2D) = "white" {}
         _Alpha("Alpha", Range(0,1)) = 0.5
         _AlphaAdd("Alpha Add", Float) = 0
-        _Scale("Scale", Float) = 1.0
+        _Scale("Scale", Float) = 0.75
         _VerticalAdjust("Vertical Adjust", Float) = 0.0
-        _ScaleVR("ScaleVR VR", Float) = 0.5
+        _ScaleVR("ScaleVR VR", Float) = 0.375
         _VerticalAdjustVR("Vertical Adjust VR", Float) = 0.0
         _DEBUGBAR("DEBUG: TEMP", Range(-1,1)) = 1.0
     }
