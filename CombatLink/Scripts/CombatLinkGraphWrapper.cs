@@ -1,8 +1,8 @@
 ﻿
-using UdonSharp;
 using UnityEngine;
 
 #if UDONSHARP
+using UdonSharp;
 using VRC.SDKBase;
 using VRC.Udon;
 public class CombatLinkGraphWrapper : UdonSharpBehaviour
