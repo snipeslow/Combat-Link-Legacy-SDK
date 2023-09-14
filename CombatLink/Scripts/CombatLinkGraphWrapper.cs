@@ -1,10 +1,10 @@
 ﻿
 using UdonSharp;
 using UnityEngine;
-using VRC.SDKBase;
-using VRC.Udon;
 
 #if UDONSHARP
+using VRC.SDKBase;
+using VRC.Udon;
 public class CombatLinkGraphWrapper : UdonSharpBehaviour
 #else
 public class CombatLinkGraphWrapper : MonoBehaviour
