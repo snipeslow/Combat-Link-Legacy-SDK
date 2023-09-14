@@ -7,7 +7,7 @@ using VRC.Udon;
 #if UDONSHARP
 public class CombatLinkGraphWrapper : UdonSharpBehaviour
 #else
-public class CombatLinkGraphWrapper : MonopBehaviour
+public class CombatLinkGraphWrapper : MonoBehaviour
 #endif
 {
     public CombatLinkManager CombatLinkManager;

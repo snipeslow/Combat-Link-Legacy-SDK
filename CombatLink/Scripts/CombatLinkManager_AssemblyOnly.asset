@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22203902d63dec94194fefc3e155c43b, type: 3}
   m_Name: CombatLinkManager_AssemblyOnly
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 13f0c0c2cb1c28a4fbc0f4ae2397428b,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 309e4d350f2bc264cb13a38c1c73cd28,
     type: 2}
   udonAssembly: ".data_start\n    .export ActivateOnLoad\n    __refl_typeid: %SystemInt64,
     null\n    __refl_typename: %SystemString, null\n    __intnl_returnJump_SystemUInt32_0:

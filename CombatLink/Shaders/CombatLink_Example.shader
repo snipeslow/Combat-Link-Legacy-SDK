@@ -32,7 +32,7 @@ Shader "CombatLink/CombatLink_Example"
             #pragma fragment frag
 
             #include "UnityCG.cginc"
-			#include "../../CombatLink/Shaders/Includes/CombatLink_Shared.cginc"
+			#include "Assets/CombatLink/Shaders/Includes/CombatLink_Shared.cginc"
 
             struct appdata
             {
