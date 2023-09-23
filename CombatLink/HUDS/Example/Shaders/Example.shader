@@ -181,7 +181,7 @@
                 else {
                     if (distance(i.mask, float2(0, 1)) < 0.01f)
                     {
-                        col = lerp(col, col * half4(1, 0, 0, 1 + _AlphaAdd), mask);
+                        col = lerp(col, half4(1, 0, 0, col.a + _AlphaAdd), mask);
                     }
 
                     if (distance(i.mask, float2(0.01f, 1)) < 0.005f)
@@ -191,12 +191,12 @@
 
                     if (distance(i.mask, float2(0.02f, 1)) < 0.005f)
                     {
-                        col = lerp(col, col * half4(0.75f, 0.75f, 1, 1 + _AlphaAdd), (i.gradient.x < (_CosTime.y * 0.025f) + 0.9f) * mask);
+                        col = lerp(col, half4(0.75f, 0.75f, 1, col.a + _AlphaAdd), (i.gradient.x < (_CosTime.y * 0.025f) + 0.9f) * mask);
                     }
 
                     if (distance(i.mask, float2(0.03f, 1)) < 0.005f)
                     {
-                        col = lerp(col, col * half4(0.5, 1, 0.5, 1 + _AlphaAdd), (i.gradient.x < (_SinTime.w * 0.025f) + 0.1f) * mask);
+                        col = lerp(col, half4(0.5, 1, 0.5, col.a + _AlphaAdd), (i.gradient.x < (_SinTime.w * 0.025f) + 0.1f) * mask);
                     }
 
                     if (distance(i.mask, float2(0.0f, 0.99f)) < 0.005f)

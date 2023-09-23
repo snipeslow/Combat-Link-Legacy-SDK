@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: HUD
+    second: {fileID: 2100000, guid: beb1145c244ac194aaa70ddf58e289eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NV
+    second: {fileID: 2100000, guid: e13eb3189c5f833438f5ce65d6c51640, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: No Name
     second: {fileID: 2100000, guid: beb1145c244ac194aaa70ddf58e289eb, type: 2}
   materials:
